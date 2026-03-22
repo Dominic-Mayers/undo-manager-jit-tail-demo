@@ -25,4 +25,11 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    'undo_box_demo' => [
+        'path' => './assets/undo_box_demo.js',
+        'entrypoint' => true,
+    ],
+    'undo-manager' => [
+        'version' => '1.1.1',
+    ],
 ];
