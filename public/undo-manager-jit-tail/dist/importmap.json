@@ -1,0 +1,54 @@
+{
+    "app": {
+        "path": "\/undo-manager-jit-tail\/dist\/app-TNXHCQF.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/stimulus_bootstrap.js": {
+        "path": "\/undo-manager-jit-tail\/dist\/stimulus_bootstrap-xCO4u8H.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/undo-manager-jit-tail\/dist\/@symfony\/stimulus-bundle\/controllers-IWeobkd.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/@symfony\/ux-turbo\/turbo_controller.js": {
+        "path": "\/undo-manager-jit-tail\/dist\/@symfony\/ux-turbo\/turbo_controller-xqRD2D6.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/controllers\/hello_controller.js": {
+        "path": "\/undo-manager-jit-tail\/dist\/controllers\/hello_controller-VYgvytJ.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/controllers\/csrf_protection_controller.js": {
+        "path": "\/undo-manager-jit-tail\/dist\/controllers\/csrf_protection_controller-6ynUAeX.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/styles\/app.css": {
+        "path": "\/undo-manager-jit-tail\/dist\/styles\/app-cT2YKNc.css",
+        "type": "css"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/undo-manager-jit-tail\/dist\/vendor\/@hotwired\/stimulus\/stimulus.index-S4zNcea.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/undo-manager-jit-tail\/dist\/@symfony\/stimulus-bundle\/loader-TdCRoU6.js",
+        "type": "js"
+    },
+    "@hotwired\/turbo": {
+        "path": "\/undo-manager-jit-tail\/dist\/vendor\/@hotwired\/turbo\/turbo.index-pT15T6h.js",
+        "type": "js"
+    },
+    "undo_box_demo": {
+        "path": "\/undo-manager-jit-tail\/dist\/undo_box_demo-cN5RNuB.js",
+        "type": "js"
+    },
+    "\/undo-manager-jit-tail\/dist\/undo-manager-jit-tail\/undo-manager-jit-tail.js": {
+        "path": "\/undo-manager-jit-tail\/dist\/undo-manager-jit-tail\/undo-manager-jit-tail-vgh1lwC.js",
+        "type": "js"
+    },
+    "undo-manager": {
+        "path": "\/undo-manager-jit-tail\/dist\/vendor\/undo-manager\/undo-manager.index-RmyD5du.js",
+        "type": "js"
+    }
+}
