@@ -32,4 +32,7 @@ return [
     'undo-manager' => [
         'version' => '1.1.1',
     ],
+    'undo-manager-jit-tail' => [
+        'path' => 'jit-tail/undo-manager-jit-tail.js',
+    ],
 ];

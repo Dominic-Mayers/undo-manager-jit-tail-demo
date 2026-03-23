@@ -40,15 +40,15 @@
         "type": "js"
     },
     "undo_box_demo": {
-        "path": "\/undo-manager-jit-tail\/dist\/undo_box_demo-cN5RNuB.js",
-        "type": "js"
-    },
-    "\/undo-manager-jit-tail\/dist\/undo-manager-jit-tail\/undo-manager-jit-tail.js": {
-        "path": "\/undo-manager-jit-tail\/dist\/undo-manager-jit-tail\/undo-manager-jit-tail-vgh1lwC.js",
+        "path": "\/undo-manager-jit-tail\/dist\/undo_box_demo-oG0ivXY.js",
         "type": "js"
     },
     "undo-manager": {
         "path": "\/undo-manager-jit-tail\/dist\/vendor\/undo-manager\/undo-manager.index-RmyD5du.js",
+        "type": "js"
+    },
+    "undo-manager-jit-tail": {
+        "path": "\/undo-manager-jit-tail\/dist\/jit-tail\/undo-manager-jit-tail-vgh1lwC.js",
         "type": "js"
     }
 }

@@ -215,32 +215,28 @@
                 <div class="controls-group">
                     <label>Position</label>
                     <div class="row">
-                        <button type="button" data-action="move" data-dx="-12" data-dy="0">←</button>
-                        <button type="button" data-action="move" data-dx="12" data-dy="0">→</button>
-                        <button type="button" data-action="move" data-dx="0" data-dy="-12">↑</button>
-                        <button type="button" data-action="move" data-dx="0" data-dy="12">↓</button>
-                    </div>
-                    <div class="row">
                         <select id="mode-position">
                             <option value="major">major</option>
                             <option value="minor" selected>minor</option>
                             <option value="ignored">ignored</option>
-                        </select>
+                        </select> :
+                        <button type="button" data-action="move" data-dx="-12" data-dy="0">←</button>
+                        <button type="button" data-action="move" data-dx="12" data-dy="0">→</button>
+                        <button type="button" data-action="move" data-dx="0" data-dy="-12">↑</button>
+                        <button type="button" data-action="move" data-dx="0" data-dy="12">↓</button>
                     </div>
                 </div>
 
                 <div class="controls-group">
                     <label>Size</label>
                     <div class="row">
-                        <button type="button" data-action="size" data-delta="-8">smaller</button>
-                        <button type="button" data-action="size" data-delta="8">larger</button>
-                    </div>
-                    <div class="row">
                         <select id="mode-size">
                             <option value="major">major</option>
                             <option value="minor" selected>minor</option>
                             <option value="ignored">ignored</option>
-                        </select>
+                        </select> :
+                        <button type="button" data-action="size" data-delta="-8">smaller</button>
+                        <button type="button" data-action="size" data-delta="8">larger</button>
                     </div>
                 </div>
 
@@ -261,13 +257,13 @@
 
                         <div class="reset-split">
                             <button id="reset-main" type="button">
-                                Reset <span id="tail-mode-label">ephemeral</span>
+                                Reset <span id="tail-mode-label">in ephemeral mode</span>
                             </button>
                             <button id="reset-toggle" type="button">▼</button>
 
                             <div id="tail-mode-menu" class="mode-menu hidden">
-                                <div class="mode-option" data-tail-mode="ephemeral">ephemeral</div>
-                                <div class="mode-option" data-tail-mode="persistent">persistent</div>
+                                <div class="mode-option" data-tail-mode="ephemeral">in ephemeral mode</div>
+                                <div class="mode-option" data-tail-mode="persistent">in persistent mode</div>
                             </div>
                         </div>
                     </div>

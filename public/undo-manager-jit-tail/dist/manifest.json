@@ -6,10 +6,10 @@
     "app.js": "\/undo-manager-jit-tail\/dist\/app-TNXHCQF.js",
     "controllers\/csrf_protection_controller.js": "\/undo-manager-jit-tail\/dist\/controllers\/csrf_protection_controller-6ynUAeX.js",
     "controllers\/hello_controller.js": "\/undo-manager-jit-tail\/dist\/controllers\/hello_controller-VYgvytJ.js",
+    "jit-tail\/undo-manager-jit-tail.js": "\/undo-manager-jit-tail\/dist\/jit-tail\/undo-manager-jit-tail-vgh1lwC.js",
     "stimulus_bootstrap.js": "\/undo-manager-jit-tail\/dist\/stimulus_bootstrap-xCO4u8H.js",
     "styles\/app.css": "\/undo-manager-jit-tail\/dist\/styles\/app-cT2YKNc.css",
-    "undo-manager-jit-tail\/undo-manager-jit-tail.js": "\/undo-manager-jit-tail\/dist\/undo-manager-jit-tail\/undo-manager-jit-tail-vgh1lwC.js",
-    "undo_box_demo.js": "\/undo-manager-jit-tail\/dist\/undo_box_demo-cN5RNuB.js",
+    "undo_box_demo.js": "\/undo-manager-jit-tail\/dist\/undo_box_demo-oG0ivXY.js",
     "vendor\/@hotwired\/stimulus\/stimulus.index.js": "\/undo-manager-jit-tail\/dist\/vendor\/@hotwired\/stimulus\/stimulus.index-S4zNcea.js",
     "vendor\/@hotwired\/turbo\/turbo.index.js": "\/undo-manager-jit-tail\/dist\/vendor\/@hotwired\/turbo\/turbo.index-pT15T6h.js",
     "vendor\/undo-manager\/undo-manager.index.js": "\/undo-manager-jit-tail\/dist\/vendor\/undo-manager\/undo-manager.index-RmyD5du.js"

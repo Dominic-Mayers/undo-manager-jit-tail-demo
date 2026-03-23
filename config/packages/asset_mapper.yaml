@@ -3,7 +3,8 @@ framework:
         public_prefix: '/undo-manager-jit-tail/dist/'
         # The paths to make available to the asset mapper.
         paths:
-            - assets/
+            assets/ : ''
+            ../undo-manager-jit-tail-package/src/ : 'jit-tail'
         missing_import_mode: strict
 
 when@prod:

@@ -9,8 +9,8 @@
 <script type="importmap" data-turbo-track="reload">
 {
     "imports": {
-        "undo_box_demo": "/undo-manager-jit-tail/dist/undo_box_demo-cN5RNuB.js",
-        "/undo-manager-jit-tail/dist/undo-manager-jit-tail/undo-manager-jit-tail.js": "/undo-manager-jit-tail/dist/undo-manager-jit-tail/undo-manager-jit-tail-vgh1lwC.js",
+        "undo_box_demo": "/undo-manager-jit-tail/dist/undo_box_demo-oG0ivXY.js",
+        "undo-manager-jit-tail": "/undo-manager-jit-tail/dist/jit-tail/undo-manager-jit-tail-vgh1lwC.js",
         "undo-manager": "/undo-manager-jit-tail/dist/vendor/undo-manager/undo-manager.index-RmyD5du.js",
         "app": "/undo-manager-jit-tail/dist/app-TNXHCQF.js",
         "/undo-manager-jit-tail/dist/stimulus_bootstrap.js": "/undo-manager-jit-tail/dist/stimulus_bootstrap-xCO4u8H.js",
@@ -34,8 +34,8 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
     document.head.appendChild(script);
 })();
 </script>
-<link rel="modulepreload" href="/undo-manager-jit-tail/dist/undo_box_demo-cN5RNuB.js">
-<link rel="modulepreload" href="/undo-manager-jit-tail/dist/undo-manager-jit-tail/undo-manager-jit-tail-vgh1lwC.js">
+<link rel="modulepreload" href="/undo-manager-jit-tail/dist/undo_box_demo-oG0ivXY.js">
+<link rel="modulepreload" href="/undo-manager-jit-tail/dist/jit-tail/undo-manager-jit-tail-vgh1lwC.js">
 <link rel="modulepreload" href="/undo-manager-jit-tail/dist/vendor/undo-manager/undo-manager.index-RmyD5du.js">
 <script type="module" data-turbo-track="reload">import 'undo_box_demo';</script>
     </head>
@@ -239,7 +239,7 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
                 </div>
 
                 <div class="info-secondary info-extra">
-                    <span style="font-weight: bold">Undo</span>: By default, move to the previous checkpoint. If the current state is dirty, first add a synthetic tail checkpoint for that state, then move to the previous (original) checkpoint.<br>
+                    <span style="font-weight: bold">Undo</span>: By default, move to the previous checkpoint. If the current state is dirty, first add a just-in-time tail checkpoint for that state, then move to the previous (original) checkpoint.<br>
                     <span style="font-weight: bold">Redo</span>: Move to the next checkpoint, including a tail checkpoint when one is present. Not allowed from a dirty state.
                 </div>
             </div>
@@ -252,32 +252,28 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
                 <div class="controls-group">
                     <label>Position</label>
                     <div class="row">
-                        <button type="button" data-action="move" data-dx="-12" data-dy="0">←</button>
-                        <button type="button" data-action="move" data-dx="12" data-dy="0">→</button>
-                        <button type="button" data-action="move" data-dx="0" data-dy="-12">↑</button>
-                        <button type="button" data-action="move" data-dx="0" data-dy="12">↓</button>
-                    </div>
-                    <div class="row">
                         <select id="mode-position">
                             <option value="major">major</option>
                             <option value="minor" selected>minor</option>
                             <option value="ignored">ignored</option>
-                        </select>
+                        </select> :
+                        <button type="button" data-action="move" data-dx="-12" data-dy="0">←</button>
+                        <button type="button" data-action="move" data-dx="12" data-dy="0">→</button>
+                        <button type="button" data-action="move" data-dx="0" data-dy="-12">↑</button>
+                        <button type="button" data-action="move" data-dx="0" data-dy="12">↓</button>
                     </div>
                 </div>
 
                 <div class="controls-group">
                     <label>Size</label>
                     <div class="row">
-                        <button type="button" data-action="size" data-delta="-8">smaller</button>
-                        <button type="button" data-action="size" data-delta="8">larger</button>
-                    </div>
-                    <div class="row">
                         <select id="mode-size">
                             <option value="major">major</option>
                             <option value="minor" selected>minor</option>
                             <option value="ignored">ignored</option>
-                        </select>
+                        </select> :
+                        <button type="button" data-action="size" data-delta="-8">smaller</button>
+                        <button type="button" data-action="size" data-delta="8">larger</button>
                     </div>
                 </div>
 
@@ -298,13 +294,13 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
 
                         <div class="reset-split">
                             <button id="reset-main" type="button">
-                                Reset <span id="tail-mode-label">ephemeral</span>
+                                Reset <span id="tail-mode-label">in ephemeral mode</span>
                             </button>
                             <button id="reset-toggle" type="button">▼</button>
 
                             <div id="tail-mode-menu" class="mode-menu hidden">
-                                <div class="mode-option" data-tail-mode="ephemeral">ephemeral</div>
-                                <div class="mode-option" data-tail-mode="persistent">persistent</div>
+                                <div class="mode-option" data-tail-mode="ephemeral">in ephemeral mode</div>
+                                <div class="mode-option" data-tail-mode="persistent">in persistent mode</div>
                             </div>
                         </div>
                     </div>

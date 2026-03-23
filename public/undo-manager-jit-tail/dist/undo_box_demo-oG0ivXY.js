@@ -10,7 +10,7 @@ import {
     atTail,
     undoManager,
     getIncomingForwardCommand
-} from "./undo-manager-jit-tail/undo-manager-jit-tail.js";
+} from "undo-manager-jit-tail";
 
 const currentEl = document.getElementById("current-box");
 const canonicalEl = document.getElementById("canonical-box");
@@ -220,7 +220,7 @@ current checkpoint:
 
     undoBtn.disabled = !canUndoHist();
     redoBtn.disabled = !canRedoHist();
-    tailModeLabelEl.textContent = selectedTailMode;
+    tailModeLabelEl.textContent = "in " + selectedTailMode + " mode";
 }
 
 function resetDemo() {
@@ -299,7 +299,7 @@ resetToggleBtn.addEventListener("click", (event) => {
 tailModeMenuEl.querySelectorAll("[data-tail-mode]").forEach((el) => {
     el.addEventListener("click", () => {
         selectedTailMode = el.dataset.tailMode;
-        tailModeLabelEl.textContent = selectedTailMode;
+        tailModeLabelEl.textContent = "in " + selectedTailMode + " mode";
         tailModeMenuEl.classList.add("hidden");
     });
 });
