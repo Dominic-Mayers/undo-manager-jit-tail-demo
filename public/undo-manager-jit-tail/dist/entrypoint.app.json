@@ -1,0 +1,10 @@
+[
+    "\/undo-manager-jit-tail\/dist\/stimulus_bootstrap.js",
+    "\/undo-manager-jit-tail\/dist\/styles\/app.css",
+    "@symfony\/stimulus-bundle",
+    "\/undo-manager-jit-tail\/dist\/@symfony\/stimulus-bundle\/controllers.js",
+    "@hotwired\/stimulus",
+    "\/undo-manager-jit-tail\/dist\/@symfony\/ux-turbo\/turbo_controller.js",
+    "\/undo-manager-jit-tail\/dist\/controllers\/hello_controller.js",
+    "@hotwired\/turbo"
+]
