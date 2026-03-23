@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>undo-manager-jit-tail - Hello World demo</title>
+</head>
+<body>
+
+  <h1>undo-manager-jit-tail - Hello World demo</h1>
+
+  <p>Value: <span id="value">0</span></p>
+
+  <button id="apply">Apply change (0 → 1)</button>
+  <button id="undo">Undo</button>
+  <button id="redo">Redo</button>
+
+  <script type="module">
+    const {
+      initHist,
+      executeHist,
+      undoHist,
+      redoHist
+    } = await import("https://esm.sh/@dominic.mayers/undo-manager-jit-tail@0.1.2");
+
+    let value = 0;
+    const valueEl = document.getElementById("value");
+
+    function setValue(next) {
+      value = next;
+      valueEl.textContent = value;
+      console.log("value =", value);
+    }
+
+    initHist();
+
+    // Register the checkpoint once
+    executeHist(
+      () => setValue(0),
+      () => setValue(1)
+    );
+
+    document.getElementById("apply").onclick = () => {
+      setValue(1);
+    };
+
+    document.getElementById("undo").onclick = () => {
+      const undo = undoHist();
+      undo?.();
+    };
+
+    document.getElementById("redo").onclick = () => {
+      const redo = redoHist();
+      redo?.();
+    };
+  </script>
+
+</body>
+</html>
