@@ -61,6 +61,7 @@ export function initHist(initialRedoCmd = async () => {}, tailModeArg = "ephemer
 export function executeHist(undo, redo) {
     addCheckpoint(undo, redo, false);
     logStateHist("ExecuteHist:");
+    return redo; 
 }
 
 export function redoHist() {
