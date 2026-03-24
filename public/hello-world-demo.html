@@ -10,7 +10,7 @@
 
   <p>Value: <span id="value">0</span></p>
 
-  <button id="apply">Apply change (0 → 1)</button>
+  <button id="increment">Increment</button>
   <button id="undo">Undo</button>
   <button id="redo">Redo</button>
 
@@ -25,32 +25,35 @@
     let value = 0;
     const valueEl = document.getElementById("value");
 
-    function setValue(next) {
-      value = next;
-      valueEl.textContent = value;
+    function render() {
+      valueEl.textContent = String(value);
       console.log("value =", value);
     }
 
+    function setValue(next) {
+      value = next;
+      render();
+    }
+
     initHist();
+    render();
 
-    // Register the checkpoint once
-    executeHist(
-      () => setValue(0),
-      () => setValue(1)
-    );
+    document.getElementById("increment").onclick = () => {
+      const before = value;
+      const after = value + 1;
 
-    document.getElementById("apply").onclick = () => {
-      setValue(1);
+      executeHist(
+        () => setValue(before),
+        () => setValue(after)
+      )?.();
     };
 
     document.getElementById("undo").onclick = () => {
-      const undo = undoHist();
-      undo?.();
+      undoHist()?.();
     };
 
     document.getElementById("redo").onclick = () => {
-      const redo = redoHist();
-      redo?.();
+      redoHist()?.();
     };
   </script>
 
