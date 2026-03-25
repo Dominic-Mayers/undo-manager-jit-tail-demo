@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# --- Configuration ---
+PUBLICPREFIX="public/undo-manager-jit-tail"
+EXPORTROOT="../undo-manager-jit-tail-package/docs"
+
+# Exit immediately if a command fails
+set -e
+
+# Ensure we are in the project root (optional but recommended)
+if [ ! -f "bin/console" ]; then
+    echo "Error: Please run this script from the Symfony project root."
+    exit 1
+fi
+
+echo '1. Compiling assets...'
+APP_ENV=prod APP_DEBUG=0 php bin/console asset-map:compile
+
+echo '2. Starting server...'
+symfony server:stop
+# Starting in background, quiet, no TLS as requested
+APP_ENV=prod APP_DEBUG=0 symfony server:start -d -q --no-tls
+sleep 2
+echo 'Symfony server started successfully!'
+
+echo '3. Capturing /demo/undo-box...'
+# Use curl to save the page; fails if server didn't start correctly
+curl --silent --fail http://127.0.0.1 > public/index.html
+
+# Stop server immediately after capture
+symfony server:stop
+echo 'Note: Assets were compiled for export purpose...'
+
+echo '4. Adding demo and committing...'
+git add "$PUBLICPREFIX/dist/" "public/index.html"
+# Only commit if there are changes to avoid error exit codes
+git diff-index --quiet HEAD || git commit -m 'Update demo for export'
+
+echo '5. Creating fresh split branch...'
+# Delete old branch if it exists, ignore errors if it doesn't
+git branch -D package-split 2>/dev/null || true
+git subtree split --prefix public -b package-split
+
+echo '6. Removing public demo...'
+rm -rf "$PUBLICPREFIX/dist/" "public/index.html"
+
+echo '7. Recreating target docs/...'
+rm -rf "$EXPORTROOT"
+mkdir -p "$EXPORTROOT"
+
+echo '8. Extracting archive...'
+git archive package-split | tar -x -C "$EXPORTROOT"
+
+echo '9. Flattening structure for NPM/GitHub...'
+# Use a subshell ( ) to CD so we don't lose our place in the main script
+(
+    cd "$EXPORTROOT"
+    mkdir -p dist
+    if [ -d undo-manager-jit-tail/dist ]; then 
+        mv undo-manager-jit-tail/dist/* dist/
+    fi
+    rm -rf undo-manager-jit-tail index.php .htaccess
+)
+
+echo "Success: Demo exported to $EXPORTROOT"
+
